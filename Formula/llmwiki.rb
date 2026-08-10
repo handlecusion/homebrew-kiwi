@@ -2,8 +2,8 @@ class Llmwiki < Formula
   desc "Local-first, agent-operated knowledge wiki framework"
   homepage "https://github.com/handlecusion/llmwiki"
   # bump tag+version on each release (scripts/release-bump.sh <version>)
-  url "https://github.com/handlecusion/llmwiki.git", using: :git, tag: "v0.0.5"
-  version "0.0.5"
+  url "https://github.com/handlecusion/llmwiki.git", using: :git, tag: "v0.0.6"
+  version "0.0.6"
 
   depends_on "python@3.13"
 
