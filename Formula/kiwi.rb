@@ -1,9 +1,9 @@
-class Llmwiki < Formula
+class Kiwi < Formula
   desc "Local-first, agent-operated knowledge wiki framework"
-  homepage "https://github.com/handlecusion/llmwiki"
+  homepage "https://github.com/handlecusion/kiwi"
   # bump tag+version on each release (scripts/release-bump.sh <version>)
-  url "https://github.com/handlecusion/llmwiki.git", using: :git, tag: "v0.0.6"
-  version "0.0.6"
+  url "https://github.com/handlecusion/kiwi.git", using: :git, tag: "v0.0.7"
+  version "0.0.7"
 
   depends_on "python@3.13"
 
@@ -11,10 +11,10 @@ class Llmwiki < Formula
     python3 = Formula["python@3.13"].opt_bin/"python3.13"
     system python3, "-m", "venv", libexec
     system libexec/"bin/pip", "install", "--no-cache-dir", ".[mcp,menubar]"
-    bin.install_symlink libexec/"bin/llmwiki"
+    bin.install_symlink libexec/"bin/kiwi"
   end
 
   test do
-    assert_match "llmwiki", shell_output("#{bin}/llmwiki --version")
+    assert_match "kiwi", shell_output("#{bin}/kiwi --version")
   end
 end
