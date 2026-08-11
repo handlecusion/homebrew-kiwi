@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# Bump the kiwi formula to a new release tag.
+# Bump the kiwiki formula to a new release tag.
 # Usage: scripts/release-bump.sh 0.0.4
-# Assumes the tag v<version> already exists on handlecusion/kiwi.
+# Assumes the tag v<version> already exists on handlecusion/kiwiki.
 set -euo pipefail
 
 if [[ $# -ne 1 ]]; then
@@ -13,14 +13,14 @@ version="$1"
 version="${version#v}" # accept both 0.0.4 and v0.0.4
 
 repo_root="$(cd "$(dirname "$0")/.." && pwd)"
-formula="$repo_root/Formula/kiwi.rb"
+formula="$repo_root/Formula/kiwiki.rb"
 
 sed -i '' \
   -e "s|tag: \"v[0-9][0-9.]*\"|tag: \"v${version}\"|" \
   -e "s|^  version \"[0-9][0-9.]*\"|  version \"${version}\"|" \
   "$formula"
 
-git -C "$repo_root" add Formula/kiwi.rb
-git -C "$repo_root" commit -m "kiwi ${version}"
+git -C "$repo_root" add Formula/kiwiki.rb
+git -C "$repo_root" commit -m "kiwiki ${version}"
 
 echo "Bumped formula to v${version} and committed. Push with: git -C $repo_root push"
