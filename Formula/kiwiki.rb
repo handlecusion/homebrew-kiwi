@@ -2,8 +2,8 @@ class Kiwiki < Formula
   desc "Local-first, agent-operated knowledge wiki framework"
   homepage "https://github.com/handlecusion/kiwiki"
   # bump tag+version on each release (scripts/release-bump.sh <version>)
-  url "https://github.com/handlecusion/kiwiki.git", using: :git, tag: "v0.0.13"
-  version "0.0.13"
+  url "https://github.com/handlecusion/kiwiki.git", using: :git, tag: "v0.1.0"
+  version "0.1.0"
 
   depends_on "python@3.13"
 
